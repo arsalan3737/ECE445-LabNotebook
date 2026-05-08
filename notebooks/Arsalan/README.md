@@ -1,3 +1,4 @@
+
 # Arsalan's Notebood
 ## *2026-01-27 Project Decided*
 We spent the day brain storming what to do as our 445 senior design project. Below is some of our ideas
@@ -59,3 +60,4 @@ We reviewed the design with our professor and TA. We learned a lot of the expect
 
 ## *2026-03-13 Breadboard Demo and Progress*
 We spend this day mainly focusing on getting the fall detection working using and ESP32-WROOM-S3 dev board and the aforementioned IMU. We had some ideas on how to implement fall detection but we ended up using a state machine approach. We had 4 states NORMAL → FREEFALL → IMPACT → FALLEN. Normal would be normal use around 10m/s^2 while Freefall would be when its less thatn 5 m/s^2 for 20 samples, we polled at 100hz, Impact would be when it was greater than 100 and fallen is when it was at rest. 
+<img width="1500" height="1999" alt="img4" src="https://github.com/user-attachments/assets/b3e27032-06d4-4d3b-86ab-ddd5b3f3a14e" />
