@@ -29,6 +29,8 @@ Roles were decided, Eraad will handle the PCB and hardware, I will handle the BL
 
 ## *2026-02-17 Design and Practicality Discussion*
 Eraad skectched what the final desing would look like as well as what general parts we would need. We started to research what the best possible IMU and we changed to use a TOF instead of a lidar due to restrictions in the class. 
+<img width="2048" height="1236" alt="drawing" src="https://github.com/user-attachments/assets/89362d83-75d7-429a-9c16-776e13f7f2d2" />
+
 
 ## *2026-02-25 Researching Parts*
 Eraad knew a lot about what parts we should use so he created this list with some power expectations:
@@ -59,5 +61,41 @@ Some optimistic parts we are looking at to potentially use in our design:
 We reviewed the design with our professor and TA. We learned a lot of the expectation of the presentations, like to introduce ourselves. We also changed to a LiPo battery as well as considering what could happen when falling. Componenet damage is important to consider.
 
 ## *2026-03-13 Breadboard Demo and Progress*
-We spend this day mainly focusing on getting the fall detection working using and ESP32-WROOM-S3 dev board and the aforementioned IMU. We had some ideas on how to implement fall detection but we ended up using a state machine approach. We had 4 states NORMAL → FREEFALL → IMPACT → FALLEN. Normal would be normal use around 10m/s^2 while Freefall would be when its less thatn 5 m/s^2 for 20 samples, we polled at 100hz, Impact would be when it was greater than 100 and fallen is when it was at rest. 
+We spend this day mainly focusing on getting the fall detection working using and ESP32-WROOM-S3 dev board and the aforementioned IMU. We had some ideas on how to implement fall detection but we ended up using a state machine approach. We had 4 states NORMAL → FREEFALL → IMPACT → FALLEN. Normal would be normal use around 10m/s^2 while Freefall would be when its less thatn 5 m/s^2 for 20 samples, we polled at 100hz, Impact would be when it was greater than 100 and fallen is when it was at rest. After falling a buzzer would go off. 
 <img width="1500" height="1999" alt="img4" src="https://github.com/user-attachments/assets/b3e27032-06d4-4d3b-86ab-ddd5b3f3a14e" />
+
+## *2026-03-28 BLE APP*
+I started working on the andorid app today. I started with using our ESP32 dev board in order to get a BLE connection with the phone. I used an app that could detect BLE 4.2 and ble would work and connect to the andorid phone. Then I used android studio to try and start creating the app. I started with getting the navigation working, I decided to use the Google Map directions API and the places API in order to auto fill results that were near. I used the location on the phone in order to call the directions API and displayed the directions on the phone.
+
+<img width="603" height="1306" alt="E7836057-D608-418E-8137-286C2339B75C_1_105_c" src="https://github.com/user-attachments/assets/039c3d1c-6c64-4651-82ea-8f5cd677c804" />
+
+## *2026-04-01 Individual Progress Report and 2nd Breadboard Demo*
+This week I submitted my indvidual progress report. I talked about the work I did on the BLE Andorid App as well as the fall detection I worked on with my group. For the breadboard demo Abdulrahman added the object detection as 2 coin montors to vibrate at different speeds based on how close the object was. Eraad also assembled the pcb togethet.
+
+<img width="1206" height="1226" alt="image" src="https://github.com/user-attachments/assets/68b2e4fa-8ccf-44fc-8fd8-de9330f9eb0b" />
+
+## *2026-04-07 2nd Progress Demo and V1 PCB Assembly*
+Today I continuted working on the app getting live updates as you walk to update the directions. Basically when you got to the end of the direction that you were on, within 20 meters, the next direction would display and audiobly say it using tts. I also added a BLE screen were you can connect to the ESP32 cane and set an emergecny contact for fall detection. We also got a sim card for the phone and a simple phone plan. <img width="603" height="1306" alt="70163885-05B4-4A20-94C4-8062ED987675_1_105_c" src="https://github.com/user-attachments/assets/594327fd-d98a-42ff-b36e-d27c93a228c8" />
+
+
+## *2026-04-15 Final PCB Assembly and Machine Shop*
+The final PCB was assbemled and the Machine shop finished our box and cane attachment
+
+<img width="1500" height="1999" alt="image" src="https://github.com/user-attachments/assets/9d1c8322-5fba-4d43-a845-488c5e1bbc64" />
+
+We moved the stuff from the breadboard onto the PCB and retested everything with our actual cane attachement. We noticed that fall detection was kinda iffy so so we spent a lot of time working on the parameters on that. Everything else worked find and the app connected to the cane and all motors worked for haptic directions and we implemented sos using sms so when the cane fell if you didnt cancel the sms withtin 10 seconds it would send it to the contact you entered with the last known location. 
+
+## *2026-04-21 Mock Demo and Work Left*
+Most of the work is done for the Mock demo we are thinking about 3d printing buttons as well as adding language feature on the app that changes the lnaguage on the phone to whatever its set to.
+
+## *2026-04-30 Final Demo and Final Presentation
+
+Final demo and presentation went well we prepared very good slides and practiced. 
+<img width="1999" height="1500" alt="image" src="https://github.com/user-attachments/assets/1f96e54c-ff77-475b-8461-3abc52921d4e" />
+
+
+
+
+
+
+
